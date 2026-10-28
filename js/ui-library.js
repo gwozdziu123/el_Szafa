@@ -98,7 +98,7 @@
       title: 'Biblioteka modułów',
       body: `<div class="card">${rows}<div class="set-row"><b>Rozmiary szaf</b><div class="small muted">library/enclosures.js · ${E.lib.enclosures.length} rozmiarów</div></div></div>
         <div class="sec-title">Jak rozbudować</div>
-        <div class="card card-pad small">Każda grupa aparatów to osobny plik w folderze <code>library/</code>. Skopiuj istniejący plik, zmień nagłówek i pozycje, a nazwę pliku dopisz w <code>library/_index.js</code>. Pozycje oznaczone „sprawdź” mają numer katalogowy lub szerokość do potwierdzenia w karcie producenta.</div>`,
+        <div class="card card-pad small">Każda grupa aparatów to osobny plik w folderze <code>library/</code>. Skopiuj istniejący plik, zmień nagłówek i pozycje, a nazwę pliku dopisz w <code>library/index.js</code>. Pozycje oznaczone „sprawdź” mają numer katalogowy lub szerokość do potwierdzenia w karcie producenta.</div>`,
       foot: '<button class="btn primary block" data-close>Gotowe</button>',
       onMount: root => { E.$('[data-close]', root).onclick = () => E.sheet.close(); }
     });

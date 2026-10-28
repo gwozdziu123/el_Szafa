@@ -41,6 +41,7 @@
 
   /* Ładowanie plików biblioteki zwykłymi tagami <script> – działa też z dysku (file://). */
   E.loadLibraries = function () {
+    if (!Array.isArray(self.EL_SZAFA_LIBRARY_FILES)) E.lib.errors.push('Nie udało się wczytać spisu biblioteki (library/index.js) – sprawdź, czy plik jest na serwerze');
     const files = (self.EL_SZAFA_LIBRARY_FILES || []).slice();
     return files.reduce((p, f) => p.then(() => new Promise(res => {
       const s = document.createElement('script');

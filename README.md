@@ -23,7 +23,7 @@ Każda grupa aparatów to osobny plik w `library/`:
 
 | Plik | Zawartość |
 |---|---|
-| `_index.js` | spis plików biblioteki (kolejność = kolejność w panelu) |
+| `index.js` | spis plików biblioteki (kolejność = kolejność w panelu) |
 | `enclosures.js` | rozmiary szaf |
 | `eaton-xpole-home-mcb.js` | wyłączniki nadprądowe HN, B i C, 6–63 A, 1P / 1P+N / 2P / 3P / 3P+N |
 | `eaton-xpole-home-rcd.js` | różnicowoprądowe HNC 2P/4P (typ A i AC) i RCBO HNB 1P+N |
@@ -33,11 +33,15 @@ Każda grupa aparatów to osobny plik w `library/`:
 | `phoenix-ptfix.js` | bloki rozdzielcze Phoenix Contact PTFIX (push-in) |
 | `loxone.js` | Miniserver, Extensions, zasilacze 24 V DC |
 
-Nowy plik: skopiuj istniejący, zmień nagłówek (`id`, `name`, `short`, `visual`, `prefix`, `color`) i pozycje, dopisz nazwę w `_index.js`, a w `sw.js` podnieś `CACHE_VERSION`.
+Nowy plik: skopiuj istniejący, zmień nagłówek (`id`, `name`, `short`, `visual`, `prefix`, `color`) i pozycje, dopisz nazwę w `index.js`, a w `sw.js` podnieś `CACHE_VERSION`.
 Rodzaje rysunku (`visual`): `breaker`, `rcd`, `isolator`, `spd`, `indicator`, `distblock`, `loxone`, `psu`, `generic`.
 
 Pozycje z `verify: true` (w aplikacji etykieta „sprawdź”) mają numer katalogowy lub szerokość do potwierdzenia w karcie producenta.
 Linia xPole Home nie ma własnych rozłączników ani ograniczników przepięć – w bibliotece są rozłączniki IS oraz ograniczniki SPBT12 / SPCT2 z rodziny Eaton xPole.
+
+## GitHub Pages
+
+W folderze jest pusty plik `.nojekyll` – wyłącza przetwarzanie Jekyll, które pomija pliki zaczynające się od podkreślnika. Nie usuwaj go. Nazwy plików biblioteki nie powinny zaczynać się od `_`.
 
 ## Struktura
 
