@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>el_Szafa</title>
+<meta name="description" content="Projektowanie rozdzielnic modułowych: dobór szafy, biblioteka Eaton xPole Home i Loxone, lista materiałów i wydruk.">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="loading">
+<div id="app" data-tab="cabinet">
+  <header class="topbar app-top"><div class="topbar-in">
+    <img class="brand" src="icons/icon.svg" alt="" width="32" height="32">
+    <button id="proj-name" class="proj-name" title="Zmień nazwę i dane projektu"></button>
+    <div class="grow"></div>
+    <button class="icon-btn" id="btn-undo" aria-label="Cofnij" title="Cofnij (Ctrl+Z)"><i data-ic="undo"></i></button>
+    <button class="icon-btn" id="btn-redo" aria-label="Ponów" title="Ponów (Ctrl+Y)"><i data-ic="redo"></i></button>
+    <button class="icon-btn" id="btn-projects" aria-label="Projekty" title="Projekty"><i data-ic="folder"></i></button>
+    <button class="icon-btn desk-only" id="btn-print" aria-label="Drukuj" title="Drukuj / PDF (Ctrl+P)"><i data-ic="print"></i></button>
+    <button class="icon-btn" id="btn-menu" aria-label="Menu" title="Menu"><i data-ic="more"></i></button>
+  </div></header>
+
+  <main id="main">
+    <aside id="pane-library" class="pane" aria-label="Biblioteka modułów"></aside>
+    <section id="pane-center" class="pane" aria-label="Szafa">
+      <div class="center-bar">
+        <div class="segp desk-only" id="view-seg"><button data-view="cabinet" class="on">Szafa</button><button data-view="bom">Materiały</button></div>
+        <div id="occ" class="occ"></div>
+        <div class="zoom" id="zoom-ctl">
+          <button class="icon-btn" id="zoom-out" aria-label="Pomniejsz" title="Pomniejsz"><i data-ic="minus"></i></button>
+          <button class="zoom-val" id="zoom-fit" title="Dopasuj do szerokości"><span id="zoom-val">Dopasuj</span></button>
+          <button class="icon-btn" id="zoom-in" aria-label="Powiększ" title="Powiększ"><i data-ic="plus"></i></button>
+        </div>
+      </div>
+      <div id="canvas-wrap"><div id="canvas"></div></div>
+      <div id="bom-view" hidden></div>
+    </section>
+    <aside id="pane-side" class="pane" aria-label="Właściwości"></aside>
+  </main>
+
+  <nav class="tabbar" id="tabbar"><div class="tabbar-in">
+    <button class="tab on" data-tab="cabinet"><span class="tab-ic"><i data-ic="cabinet"></i></span>Szafa</button>
+    <button class="tab" data-tab="library"><span class="tab-ic"><i data-ic="box"></i></span>Biblioteka</button>
+    <button class="tab" data-tab="bom"><span class="tab-ic"><i data-ic="list"></i></span>Materiały</button>
+    <button class="tab" data-tab="project"><span class="tab-ic"><i data-ic="gear"></i></span>Projekt</button>
+  </div></nav>
+</div>
+
+<div id="sheet-root" aria-hidden="true"><div class="backdrop"></div><div class="sheet" role="dialog" aria-modal="true">
+  <div class="grab"></div>
+  <div class="sheet-head"><h2></h2><button class="icon-btn sheet-close" aria-label="Zamknij"><i data-ic="close"></i></button></div>
+  <div class="sheet-body"></div>
+  <div class="sheet-foot"></div>
+</div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="print-root"></div>
+<input type="file" id="file-input" accept=".json,application/json" hidden>
+
+<script src="js/icons.js"></script>
+<script src="js/core.js"></script>
+<script src="library/_index.js"></script>
+<script src="js/cabinet.js"></script>
+<script src="js/render-module.js"></script>
+<script src="js/ui-common.js"></script>
+<script src="js/ui-canvas.js"></script>
+<script src="js/ui-library.js"></script>
+<script src="js/ui-panels.js"></script>
+<script src="js/bom-print.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
